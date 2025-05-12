@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Fundamentals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans p-6">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold mb-6 text-center text-blue-700">Git Fundamentals</h1>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Getting Started</h2>
+      <ul class="space-y-2">
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git config --global user.name &quot;Your Name&quot;</code> — Set your name for commits globally.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git config --global user.email &quot;your_email@example.com&quot;</code> — Set your email globally.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git config --global --list</code> — Show global Git config settings.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git init</code> — Initialize a new Git repository.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Staging Changes</h2>
+      <ul class="space-y-2">
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git add .</code> — Add all files in the current directory.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git add *</code> — Add all files that are not ignored (depends on shell).</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git add file.html file2.html</code> — Add specific files.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git status</code> — Show the working tree status.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Restoring Changes</h2>
+      <ul class="space-y-2">
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git restore file.html</code> — Revert changes in a file.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git restore --staged file.html</code> — Unstage a file (opposite of add).</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Cleaning Untracked Files</h2>
+      <ul class="space-y-2">
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git clean -n</code> — Show untracked files to be removed.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git clean -f</code> — Force remove untracked files.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git clean -fl</code> — Force remove untracked files and directories.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Committing Changes</h2>
+      <ul class="space-y-2">
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git commit -a</code> — Commit tracked file changes (not new files).</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git commit -m "message"</code> — Commit with a message.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git commit --amend</code> — Modify the last commit.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Viewing Commit History</h2>
+      <ul class="space-y-2">
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git log</code> — Show full commit history.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git log --oneline</code> — One line per commit.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git log --pretty=oneline</code> — Pretty formatted log.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git log --max-count=2</code> — Show the last 2 commits.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git log --since='5 minutes ago'</code> — Commits since 5 minutes ago.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git log --until='5 minutes ago'</code> — Commits until 5 minutes ago.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git log --author=&quot;Your Name&quot; --all</code> — All commits by an author.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git log --grep=&quot;text&quot;</code> — Search commits with matching messages.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Branches & Tags</h2>
+      <ul class="space-y-2">
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git branch</code> — List local branches.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git checkout &lt;hash|tag&gt;</code> — Checkout a specific commit or tag.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git checkout -b new-branch</code> — Create and switch to a new branch.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git switch branch-name</code> — Switch to an existing branch.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git tag &lt;name&gt; &lt;commit-id&gt;</code> — Tag a specific commit.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git tag -d tag-name</code> — Delete a local tag.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Resetting Commits</h2>
+      <ul class="space-y-2">
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git reset --soft HEAD~1</code> — Undo last commit, keep changes staged.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git reset --mixed HEAD~1</code> — Undo last commit, keep changes unstaged.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git reset --hard HEAD~1</code> — Completely remove last commit and changes.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Remote Operations</h2>
+      <ul class="space-y-2">
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git fetch</code> — Fetch changes from the remote without merging.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git pull</code> — Fetch and merge changes from the remote branch you're tracking.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git pull origin master</code> — Pull changes from origin/master explicitly.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git push</code> — Push committed changes to the remote repository.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git merge branch-name</code> — Merge another branch into the current branch.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git remote</code> — Show names of remote repositories.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git remote -v</code> — Show URLs of remote repositories.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git remote show origin</code> — Show details about the origin remote.</li>
+      </ul>
+    </section>
+
+    <footer class="text-center text-gray-500 mt-12 text-sm">
+  &copy; Made with 💙 by 
+  <a href="www.linkedin.com/in/mohamed-el-aassal-910486267" target="_blank" class="text-blue-500 hover:underline">
+    MOHAMED EL AASSAL
+  </a>
+</footer>
+  </div>
+</body>
+</html>
