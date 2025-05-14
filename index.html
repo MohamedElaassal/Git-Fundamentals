@@ -43,7 +43,7 @@
       <ul class="space-y-2">
         <li><code class="bg-gray-200 px-2 py-1 rounded">git clean -n</code> — Show untracked files to be removed.</li>
         <li><code class="bg-gray-200 px-2 py-1 rounded">git clean -f</code> — Force remove untracked files.</li>
-        <li><code class="bg-gray-200 px-2 py-1 rounded">git clean -fl</code> — Force remove untracked files and directories.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git clean -fd</code> — Force remove untracked files and directories.</li>
       </ul>
     </section>
 
@@ -64,7 +64,6 @@
         <li><code class="bg-gray-200 px-2 py-1 rounded">git log --pretty=oneline</code> — Pretty formatted log.</li>
         <li><code class="bg-gray-200 px-2 py-1 rounded">git log --max-count=2</code> — Show the last 2 commits.</li>
         <li><code class="bg-gray-200 px-2 py-1 rounded">git log --since='5 minutes ago'</code> — Commits since 5 minutes ago.</li>
-        <li><code class="bg-gray-200 px-2 py-1 rounded">git log --until='5 minutes ago'</code> — Commits until 5 minutes ago.</li>
         <li><code class="bg-gray-200 px-2 py-1 rounded">git log --author=&quot;Your Name&quot; --all</code> — All commits by an author.</li>
         <li><code class="bg-gray-200 px-2 py-1 rounded">git log --grep=&quot;text&quot;</code> — Search commits with matching messages.</li>
       </ul>
@@ -74,6 +73,14 @@
       <h2 class="text-2xl font-semibold text-gray-700 mb-4">Branches & Tags</h2>
       <ul class="space-y-2">
         <li><code class="bg-gray-200 px-2 py-1 rounded">git branch</code> — List local branches.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git branch -a</code> — List remote branches.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git branch -d branchName</code> — List local branch.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git push origin --delete branchName</code> — List local branch.</li>
+
+
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git switch</code> — List local branch.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git switch -</code> — List local branch.</li>
+
         <li><code class="bg-gray-200 px-2 py-1 rounded">git checkout &lt;hash|tag&gt;</code> — Checkout a specific commit or tag.</li>
         <li><code class="bg-gray-200 px-2 py-1 rounded">git checkout -b new-branch</code> — Create and switch to a new branch.</li>
         <li><code class="bg-gray-200 px-2 py-1 rounded">git switch branch-name</code> — Switch to an existing branch.</li>
@@ -85,9 +92,9 @@
     <section class="mb-10">
       <h2 class="text-2xl font-semibold text-gray-700 mb-4">Resetting Commits</h2>
       <ul class="space-y-2">
-        <li><code class="bg-gray-200 px-2 py-1 rounded">git reset --soft HEAD~1</code> — Undo last commit, keep changes staged.</li>
-        <li><code class="bg-gray-200 px-2 py-1 rounded">git reset --mixed HEAD~1</code> — Undo last commit, keep changes unstaged.</li>
-        <li><code class="bg-gray-200 px-2 py-1 rounded">git reset --hard HEAD~1</code> — Completely remove last commit and changes.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git reset --soft HEAD^</code> — Undo last commit, keep changes staged.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git reset --mixed (default)HEAD^, git reset HEAD^</code> — Undo last commit, keep changes unstaged.</li>
+        <li><code class="bg-gray-200 px-2 py-1 rounded">git reset --hard HEAD^</code> — Completely remove last commit and changes.</li>
       </ul>
     </section>
 
